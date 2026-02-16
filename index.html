@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y-Trap | Next-Generation Cancer Immunotherapy</title>
+    <meta name="description" content="Y-Trap develops novel multispecific antibodies that reprogram tumor-promoting immune cells for cancer immunotherapy.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --midnight: #ffffff;
+            --cyan: #111827;
+            --white: #111827;
+            --silver: #4b5563;
+            --muted: #6b7280;
+            --font-display: 'Sora', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--midnight);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .page {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        .nav {
+            padding: 24px clamp(24px, 5vw, 64px);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-text {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-cta {
+            padding: 12px 28px;
+            background: transparent;
+            border: 1px solid rgba(17, 24, 39, 0.3);
+            color: var(--cyan);
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            background: var(--cyan);
+            color: var(--midnight);
+            border-color: var(--cyan);
+        }
+
+        /* Hero */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 0 clamp(24px, 5vw, 64px);
+        }
+
+        .hero-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 28px;
+        }
+
+        .h1-line2 {
+            display: block;
+            white-space: nowrap;
+        }
+
+        h1 em {
+            font-style: normal;
+            color: var(--cyan);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--silver);
+            line-height: 1.75;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--cyan);
+            color: var(--midnight);
+        }
+
+        .btn-primary:hover {
+            background: #1f2937;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px clamp(24px, 5vw, 64px);
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .footer-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .footer-contact {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .footer-contact a {
+            color: var(--cyan);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .h1-line2 {
+                white-space: normal;
+            }
+
+            h1 {
+                font-size: clamp(1.75rem, 7vw, 2.5rem);
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .nav-cta {
+                padding: 10px 20px;
+                font-size: 0.8rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <nav class="nav">
+            <div class="nav-inner">
+                <a href="#" class="logo">
+                    <span class="logo-text">Y-Trap</span>
+                </a>
+                <a href="mailto:info@y-trap.com" class="nav-cta">Contact Us</a>
+            </div>
+        </nav>
+
+        <main class="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <h1>Reprogramming the <span class="h1-line2">tumor immune <em>microenvironment</em></span></h1>
+                    <p class="hero-description">
+                        Y-Trap develops novel multispecific antibodies that go beyond checkpoint blockade—designed to correct the immunosuppressive phenotypes that allow tumors to evade the immune system.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="mailto:info@y-trap.com" class="btn btn-primary">
+                            Get in Touch
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-inner">
+                <p class="footer-copyright">&copy; 2026 Y-Trap, Inc. All rights reserved.</p>
+                <p class="footer-contact"><a href="mailto:info@y-trap.com">info@y-trap.com</a></p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
