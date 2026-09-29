@@ -76,6 +76,12 @@
             letter-spacing: -0.02em;
         }
 
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
         .nav-cta {
             padding: 12px 28px;
             background: transparent;
@@ -88,12 +94,25 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .nav-cta:hover {
             background: var(--cyan);
             color: var(--midnight);
             border-color: var(--cyan);
+        }
+
+        .nav-careers {
+            background: #000;
+            color: #fff;
+            border-color: #000;
+        }
+
+        .nav-careers:hover {
+            background: #222;
+            color: #fff;
+            border-color: #222;
         }
 
         /* Hero */
@@ -249,6 +268,20 @@
                 text-align: center;
             }
         }
+
+        @media (max-width: 480px) {
+            .nav {
+                padding: 24px 16px;
+            }
+
+            .nav-actions {
+                gap: 8px;
+            }
+
+            .nav-cta {
+                padding: 10px 12px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -258,7 +291,10 @@
                 <a href="#" class="logo">
                     <span class="logo-text">Y-Trap</span>
                 </a>
-                <a href="mailto:info@y-trap.com" class="nav-cta">Contact Us</a>
+                <div class="nav-actions">
+                    <a href="mailto:info@y-trap.com" class="nav-cta">Contact Us</a>
+                    <a href="https://y-trap.breezy.hr/" class="nav-cta nav-careers">Careers</a>
+                </div>
             </div>
         </nav>
 
